@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="WooChoi&#39;s Data Science">
+    <title>가나자와 공업대학 캡스톤디자인 발표회 - WooChoi&#39;s Data Science</title>
+    <meta name="author" content="Woojung Choi">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Woojung Choi","sameAs":["https://github.com/woojungchoi","http://stackoverflow.com/users","https://www.linkedin.com/in/woojung-joe-choi-90064616a/","mailto:'cwj635@gmail.com'"],"image":"Me.jpg"},"articleBody":"\n일본 공과대학 교육 평가 1등을 차지한 ‘가나자와 공업대학’에서 개최하는 캡스톤디자인 경진대회에 초청을 받아 우리 연구실의 작품이 발표를 하게 되었다. 학부생 발표자가 필요하여 개발에 참여하지는 않았지만 기반 기술과 내용들을 숙지하여 급하게 일본으로 떠났다.\n연구 주제는 ‘생체 데이터를 활용한 영유아 스트레스 상태식별 모델 연구’이다. 당시에 유치원 보육원 등에서 일어나는 아동 폭행에 대한 이슈가 발생하여 연구를 시작하게 되었다. 기계학습의 분류 알고리즘을 통해 영유아의 위급한 상태를 실시간으로 감지하여 어플리케이션을 통해 알림을 보내는 팔찌를 만들었다.\n간단하게 내용을 설명해보면 다음과 같다. 우선 영유아의 음성과 심박수(Heart Rate) 데이터를 수집한다. ‘Sound Feature Extraction Tool’을 통해 음성의 특징을 추출하여 심박수와 함께 Input Data로 사용하고, Output Class는 안정 상태(0), 스트레스 상태(1)로 설정하였다. 추가로 데이터셋 또한 소음을 0% / 50% / 100%의 비율로 추가하여 각 상황에서의 성능을 비교해 보았다.\n\n\n\naccuracy comparison of three classifier\n‘Decision Tree’, ‘Naïve Bayes’, ‘SVM’ 3가지의 지도학습 분류 모델을 사용하였으며, 학습 시 10-folds Cross Validation 방법을 사용했다. 위는 데이터셋별 모델의 정확도를 비교한 그래프이다. SVM 모델은 전반적으로 괜찮은 성능을 보였던 반면 의사결정나무 모델은 소음이 50%일 때 낮은 성능을 보였고 Naïve Bayes는 모든 데이터셋에서 저조한 성능을 보였다.\n따라서 SVM 모델을 기반으로 하여 프로토타입 팔찌를 개발했다. 이에 더해 아이가 위급한 상태에 있을 때 알림을 받을 수 있는 어플리케이션을 개발하셨고, 해당 어플리케이션은 카카오톡 아이디로 연동해 로그인하여 관리할 수 있었다. 당시 IT 분야에 있어 꼬맹이였던 나에게 기계학습, 어플리케이션, 서버 등의 기술을 모두 직접 개발하신것이 큰 충격이었고… 나도 꼭 능력자가 되어야겠다고 결심했다.\n일본으로 건너간 후 우리가 발표하게 될 날이 가나자와 공과대학 기계공학과의 발표날이었다는 것을 알게되었다. 나는 산업공학과에서 출품하는 작품들에 대해 많이 기대했었지만 그러지 못해 아쉬웠다. 하지만 학생들 및 교수님들이 기계공학과와는 조금 다른 우리 작품에 대해 많은 관심을 가져주셔서 감사했다.\n작품 전시 중 현지 기계공학과 교수님께서 작품을 보러 오셨다. 우리의 주된 기술인 기계학습을 활용한 모델에 대해 열심히 설명했지만, 교수님께서는 팔찌에 장착된 음성을 인식하는 하드웨어에 대해서 주로 물어보셨다… 물론 하드웨어에 대해서 전혀 몰라 대답을 해드릴수가 없어서 아쉬웠다.\n&lt;현지 기계공학과 학생들&gt;드론과 관련된 작품들이 많았고, 이 대학이 시대에 발맞춰가고 있다는 생각이 들었다. 이어서는 재활치료기구나 생활 보조에 필요한 의료기구가 많았는데 일본의 큰 사회문제 중 하나인 고령화에 비롯된 작품들이지 않을까 싶다.\n이 친구들에게 졸업작품 발표회는 매우 중요한 행사이며 양복을 입고 발표하는게 전통이라고 한다. 교수님들, 발표 참여 학생들, 외부의 초청된 손님들 모두 우수작품을 투표할 수 있는 스티커를 나누어주고 이를 통해 점수를 메겨 평가한다. 일본 공과대학 교육 1위로 선정된 만큼 수상하게 되면 꽤 큰 커리어로 남을것이다. 기업담당자가 찾아와 채용기회를 얻을 수도 있다고 한다.\n&lt;가나자와 공업대학&gt;가나자와 공업대학은 아사히 신문 대학평가에서 7년 연속 교육분야 1위에 오른 도쿄대보다 잘 가르치는 지방대라고 알려져있다. 나는 이 대학에서 우리가 배워와야 한다고 느낀 점이 두가지 있다. 첫째는 테이블과 의자 수가 정말 많다는 것이다. 별거 아니라고 생각될 수 있지만, 이 대학 학생들은 학교 어디를 가든 앉아서 노트북과 책을 펼 수 있는 자리가 있다. 우리 대학은 시험기간이 되면 도서관조차 자리가 없어 어디서 공부할지 헤매지만, 여기서는 그런 걱정을 할 필요가 전혀 없다.\n두번째는 이 학교의 기계 실습실에서 사용하고 있는 시스템이다. 실습실 벽에 붙어있는 표를 보면 학생들의 이름과 각 실습기계들에 대한 숙련도가 표시되어있다. 누구든 자신이 실습하거나 사용하려고 하는 기계의 숙련자에게 연락하여 안전 및 사용에 대한 교육을 받을 수 있다. 물론 숙련자들은 이름을 올려놓게 되면 소정의 장학금을 받는 것으로 알고있다. 이 시스템을 우리 학교의 공동실험실습실에 적용하면 효과적일것이라 생각하고, 단순 기계 활용에 더해 프로그래밍 등 다른 분야에도 적용하면 좋을 것 같다.\n\n","dateCreated":"2019-05-16T10:16:50+09:00","dateModified":"2020-06-02T22:10:31+09:00","datePublished":"2019-05-16T10:16:50+09:00","description":"\n일본 공과대학 교육 평가 1등을 차지한 ‘가나자와 공업대학’에서 개최하는 캡스톤디자인 경진대회에 초청을 받아 발표에 참여하게 됐다. 연구실에서는 당시 사회 이슈였던 아동 폭행으로 인해 ‘생체 데이터를 활용한 영유아 스트레스 상태식별 모델’을 주제로 연구했고, 연구결과로 유아의 위험상태를 알려줄 수 있는 팔찌를 만들었다.","headline":"가나자와 공업대학 캡스톤디자인 발표회","image":["coverimage2.jpg","coverimage4.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://woojungchoi.github.io/2019/05/16/kanajawa/"},"publisher":{"@type":"Organization","name":"Woojung Choi","sameAs":["https://github.com/woojungchoi","http://stackoverflow.com/users","https://www.linkedin.com/in/woojung-joe-choi-90064616a/","mailto:'cwj635@gmail.com'"],"image":"Me.jpg","logo":{"@type":"ImageObject","url":"Me.jpg"}},"url":"https://woojungchoi.github.io/2019/05/16/kanajawa/","keywords":"Conference, Machine Learning","thumbnailUrl":"coverimage2.jpg"}</script>
+    <meta name="description" content="일본 공과대학 교육 평가 1등을 차지한 ‘가나자와 공업대학’에서 개최하는 캡스톤디자인 경진대회에 초청을 받아 발표에 참여하게 됐다. 연구실에서는 당시 사회 이슈였던 아동 폭행으로 인해 ‘생체 데이터를 활용한 영유아 스트레스 상태식별 모델’을 주제로 연구했고, 연구결과로 유아의 위험상태를 알려줄 수 있는 팔찌를 만들었다.">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="가나자와 공업대학 캡스톤디자인 발표회">
+<meta property="og:url" content="https://woojungchoi.github.io/2019/05/16/kanajawa/index.html">
+<meta property="og:site_name" content="WooChoi&#39;s Data Science">
+<meta property="og:description" content="일본 공과대학 교육 평가 1등을 차지한 ‘가나자와 공업대학’에서 개최하는 캡스톤디자인 경진대회에 초청을 받아 발표에 참여하게 됐다. 연구실에서는 당시 사회 이슈였던 아동 폭행으로 인해 ‘생체 데이터를 활용한 영유아 스트레스 상태식별 모델’을 주제로 연구했고, 연구결과로 유아의 위험상태를 알려줄 수 있는 팔찌를 만들었다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/Accuracy.PNG">
+<meta property="article:published_time" content="2019-05-16T01:16:50.000Z">
+<meta property="article:modified_time" content="2020-06-02T13:10:31.428Z">
+<meta property="article:author" content="Woojung Choi">
+<meta property="article:tag" content="Conference">
+<meta property="article:tag" content="Machine Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/Accuracy.PNG">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://woojungchoi.github.io/assets/images/Me.jpg"/>
+    
+    
+        <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/coverimage2.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/coverimage2.jpg" />
+    
+    
+        <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/coverimage4.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/coverimage4.jpg" />
+    
+    
+        
+            <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery1.jpg" />
+            <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery1.jpg" />
+        
+            <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery2.jpg" />
+            <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery2.jpg" />
+        
+            <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery3.jpg" />
+            <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery3.jpg" />
+        
+            <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery4.jpg" />
+            <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery4.jpg" />
+        
+            <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery5.jpg" />
+            <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery5.jpg" />
+        
+            <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery6.jpg" />
+            <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery6.jpg" />
+        
+            <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery7.jpg" />
+            <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery7.jpg" />
+        
+            <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery8.jpg" />
+            <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery8.jpg" />
+        
+            <meta property="og:image" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery9.jpg" />
+            <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery9.jpg" />
+        
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/%20">WooChoi&#39;s Data Science</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/Me.jpg" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/Me.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Woojung Choi</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>#DataMining #Statistics #BigData</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/%20"
+                            
+                            title="Home"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/profile/"
+                            
+                            title="Profile"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-user" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Profile</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="Categories"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="Tags"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="Archives"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                            title="Search"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="About"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/woojungchoi" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="http://stackoverflow.com/users" target="_blank" rel="noopener" title="Stack Overflow">
+                    
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.linkedin.com/in/woojung-joe-choi-90064616a/" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="mailto:'cwj635@gmail.com'" target="_blank" rel="noopener" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-center
+                    post-header-cover--partial"
+             style="background-image:url('/2019/05/16/kanajawa/coverimage4.jpg');"
+             data-behavior="4">
+            
+        </div>
+
+            <div id="main" data-behavior="4"
+                 class="hasCover
+                        hasCoverMetaOut
+                        hasCoverCaption">
+                
+<article class="post">
+    
+        <span class="post-header-cover-caption caption">발표회에 초청된 인천대팀</span>
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title">
+            가나자와 공업대학 캡스톤디자인 발표회
+        </h1>
+    
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!-- excerpt --></p>
+<p>일본 공과대학 교육 평가 1등을 차지한 ‘가나자와 공업대학’에서 개최하는 캡스톤디자인 경진대회에 초청을 받아 우리 연구실의 작품이 발표를 하게 되었다. 학부생 발표자가 필요하여 개발에 참여하지는 않았지만 기반 기술과 내용들을 숙지하여 급하게 일본으로 떠났다.</p>
+<p>연구 주제는 <span class="highlight-text primary">‘생체 데이터를 활용한 영유아 스트레스 상태식별 모델 연구’</span>이다. 당시에 유치원 보육원 등에서 일어나는 아동 폭행에 대한 이슈가 발생하여 연구를 시작하게 되었다. 기계학습의 분류 알고리즘을 통해 영유아의 위급한 상태를 실시간으로 감지하여 어플리케이션을 통해 알림을 보내는 팔찌를 만들었다.</p>
+<p>간단하게 내용을 설명해보면 다음과 같다. 우선 영유아의 음성과 심박수(Heart Rate) 데이터를 수집한다. ‘Sound Feature Extraction Tool’을 통해 음성의 특징을 추출하여 심박수와 함께 Input Data로 사용하고, Output Class는 안정 상태(0), 스트레스 상태(1)로 설정하였다. 추가로 데이터셋 또한 소음을 0% / 50% / 100%의 비율로 추가하여 각 상황에서의 성능을 비교해 보았다.</p>
+
+<br><br>
+
+<div class="figure left" style="width:;"><a class="fancybox" href="image2.png" title="accuracy comparison of three classifier" data-caption="accuracy comparison of three classifier" data-fancybox="travel"><img class="fig-img" src="Accuracy.PNG" alt="accuracy comparison of three classifier"></a><span class="caption">accuracy comparison of three classifier</span></div><div style="clear:both;"></div>
+<p>‘Decision Tree’, ‘Naïve Bayes’, ‘SVM’ 3가지의 지도학습 분류 모델을 사용하였으며, 학습 시 10-folds Cross Validation 방법을 사용했다. 위는 데이터셋별 모델의 정확도를 비교한 그래프이다. SVM 모델은 전반적으로 괜찮은 성능을 보였던 반면 의사결정나무 모델은 소음이 50%일 때 낮은 성능을 보였고 Naïve Bayes는 모든 데이터셋에서 저조한 성능을 보였다.</p>
+<p>따라서 SVM 모델을 기반으로 하여 프로토타입 팔찌를 개발했다. 이에 더해 아이가 위급한 상태에 있을 때 알림을 받을 수 있는 어플리케이션을 개발하셨고, 해당 어플리케이션은 카카오톡 아이디로 연동해 로그인하여 관리할 수 있었다. 당시 IT 분야에 있어 꼬맹이였던 나에게 기계학습, 어플리케이션, 서버 등의 기술을 모두 직접 개발하신것이 큰 충격이었고… 나도 꼭 능력자가 되어야겠다고 결심했다.</p>
+<p>일본으로 건너간 후 우리가 발표하게 될 날이 가나자와 공과대학 기계공학과의 발표날이었다는 것을 알게되었다. 나는 산업공학과에서 출품하는 작품들에 대해 많이 기대했었지만 그러지 못해 아쉬웠다. 하지만 학생들 및 교수님들이 기계공학과와는 조금 다른 우리 작품에 대해 많은 관심을 가져주셔서 감사했다.</p>
+<p>작품 전시 중 현지 기계공학과 교수님께서 작품을 보러 오셨다. 우리의 주된 기술인 기계학습을 활용한 모델에 대해 열심히 설명했지만, 교수님께서는 팔찌에 장착된 음성을 인식하는 하드웨어에 대해서 주로 물어보셨다… 물론 하드웨어에 대해서 전혀 몰라 대답을 해드릴수가 없어서 아쉬웠다.</p>
+<p>&lt;현지 기계공학과 학생들&gt;<br>드론과 관련된 작품들이 많았고, 이 대학이 시대에 발맞춰가고 있다는 생각이 들었다. 이어서는 재활치료기구나 생활 보조에 필요한 의료기구가 많았는데 일본의 큰 사회문제 중 하나인 고령화에 비롯된 작품들이지 않을까 싶다.</p>
+<p>이 친구들에게 졸업작품 발표회는 매우 중요한 행사이며 양복을 입고 발표하는게 전통이라고 한다. 교수님들, 발표 참여 학생들, 외부의 초청된 손님들 모두 우수작품을 투표할 수 있는 스티커를 나누어주고 이를 통해 점수를 메겨 평가한다. 일본 공과대학 교육 1위로 선정된 만큼 수상하게 되면 꽤 큰 커리어로 남을것이다. 기업담당자가 찾아와 채용기회를 얻을 수도 있다고 한다.</p>
+<p>&lt;가나자와 공업대학&gt;<br>가나자와 공업대학은 아사히 신문 대학평가에서 7년 연속 교육분야 1위에 오른 도쿄대보다 잘 가르치는 지방대라고 알려져있다. 나는 이 대학에서 우리가 배워와야 한다고 느낀 점이 두가지 있다. 첫째는 테이블과 의자 수가 정말 많다는 것이다. 별거 아니라고 생각될 수 있지만, 이 대학 학생들은 학교 어디를 가든 앉아서 노트북과 책을 펼 수 있는 자리가 있다. 우리 대학은 시험기간이 되면 도서관조차 자리가 없어 어디서 공부할지 헤매지만, 여기서는 그런 걱정을 할 필요가 전혀 없다.</p>
+<p>두번째는 이 학교의 기계 실습실에서 사용하고 있는 시스템이다. 실습실 벽에 붙어있는 표를 보면 학생들의 이름과 각 실습기계들에 대한 숙련도가 표시되어있다. 누구든 자신이 실습하거나 사용하려고 하는 기계의 숙련자에게 연락하여 안전 및 사용에 대한 교육을 받을 수 있다. 물론 숙련자들은 이름을 올려놓게 되면 소정의 장학금을 받는 것으로 알고있다. 이 시스템을 우리 학교의 공동실험실습실에 적용하면 효과적일것이라 생각하고, 단순 기계 활용에 더해 프로그래밍 등 다른 분야에도 적용하면 좋을 것 같다.</p>
+
+<br>
+            
+    
+    <div class="image-gallery">
+        <div class="image-gallery-metabar">
+            <span>Gallery: 9 images</span>
+        </div>
+        <div class="image-gallery-photos image-gallery-photos--thumbnail">
+            
+            
+            <div class="photo-box">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="gallery-ckbvqr3qj000apsucxc7ylb0b"
+                    data-caption="가나자와 공업대학 기계공학과 교수님"
+                    title="가나자와 공업대학 기계공학과 교수님"
+                    href="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery1.jpg"
+                >
+                    <img
+		                    class="photo" src="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery1.jpg"
+                    >
+                </a>
+            </div>
+            
+            
+            <div class="photo-box">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="gallery-ckbvqr3qj000apsucxc7ylb0b"
+                    data-caption="가나자와 공업대학 기계공학과 교수님"
+                    title="가나자와 공업대학 기계공학과 교수님"
+                    href="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery2.jpg"
+                >
+                    <img
+		                    class="photo" src="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery2.jpg"
+                    >
+                </a>
+            </div>
+            
+            
+            <div class="photo-box">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="gallery-ckbvqr3qj000apsucxc7ylb0b"
+                    data-caption="인천대학교 교수님께 사전 설명중이다"
+                    title="인천대학교 교수님께 사전 설명중이다"
+                    href="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery3.jpg"
+                >
+                    <img
+		                    class="photo" src="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery3.jpg"
+                    >
+                </a>
+            </div>
+            
+            
+            <div class="photo-box">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="gallery-ckbvqr3qj000apsucxc7ylb0b"
+                    data-caption="영남댸?학교에서 온 학생분들"
+                    title="영남댸?학교에서 온 학생분들"
+                    href="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery4.jpg"
+                >
+                    <img
+		                    class="photo" src="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery4.jpg"
+                    >
+                </a>
+            </div>
+            
+            
+            <div class="photo-box">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="gallery-ckbvqr3qj000apsucxc7ylb0b"
+                    data-caption="현지 기계공학과 학생"
+                    title="현지 기계공학과 학생"
+                    href="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery5.jpg"
+                >
+                    <img
+		                    class="photo" src="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery5.jpg"
+                    >
+                </a>
+            </div>
+            
+            
+            <div class="photo-box">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="gallery-ckbvqr3qj000apsucxc7ylb0b"
+                    data-caption="현지 기계공학과 학생"
+                    title="현지 기계공학과 학생"
+                    href="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery6.jpg"
+                >
+                    <img
+		                    class="photo" src="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery6.jpg"
+                    >
+                </a>
+            </div>
+            
+            
+            <div class="photo-box">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="gallery-ckbvqr3qj000apsucxc7ylb0b"
+                    data-caption="현지 기계공학과 학생"
+                    title="현지 기계공학과 학생"
+                    href="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery7.jpg"
+                >
+                    <img
+		                    class="photo" src="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery7.jpg"
+                    >
+                </a>
+            </div>
+            
+            
+            <div class="photo-box">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="gallery-ckbvqr3qj000apsucxc7ylb0b"
+                    data-caption="작품설명을 듣는 형님들"
+                    title="작품설명을 듣는 형님들"
+                    href="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery8.jpg"
+                >
+                    <img
+		                    class="photo" src="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery8.jpg"
+                    >
+                </a>
+            </div>
+            
+            
+            <div class="photo-box">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="gallery-ckbvqr3qj000apsucxc7ylb0b"
+                    data-caption="한국초대작품 중에서 1등을 한 다중카메라관리시스템?"
+                    title="한국초대작품 중에서 1등을 한 다중카메라관리시스템?"
+                    href="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery9.jpg"
+                >
+                    <img
+		                    class="photo" src="https://woojungchoi.github.io/2019/05/16/kanajawa/gallery9.jpg"
+                    >
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Conference/" rel="tag">Conference</a> <a class="tag tag--primary tag--small t-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a>
+
+            </div>
+        
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2020 Woojung Choi. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/Me.jpg" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Woojung Choi</h4>
+        
+            <div id="about-card-bio"><p>#DataMining #Statistics #BigData</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>전자부품연구원 <br>지능융합SW 연구센터</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

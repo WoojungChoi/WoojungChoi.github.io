@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="WooChoi&#39;s Data Science">
+    <title>MongoDB 설치 - WooChoi&#39;s Data Science</title>
+    <meta name="author" content="Woojung Choi">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Woojung Choi","sameAs":["https://github.com/woojungchoi","http://stackoverflow.com/users","https://www.linkedin.com/in/woojung-joe-choi-90064616a/","mailto:'cwj635@gmail.com'"],"image":"Me.jpg"},"articleBody":"\n가장 보편적으로 사용하는 NoSQL인 MongoDB의 설치 방법을 알아보자.\n‘OpenTSDB’, ‘InfluxDB’ 또한 NoSQL이지만 ‘MongoDB’를 먼저 선택하게 된 계기가 있다. mongoDB의 데이터는 각 ‘collection’에 ‘document’ 형식으로 저장이 되는데, 이는 파이썬 ‘Dictionary’ 자료형과 같다.\n데이터 분석시 파이썬 ‘Dictionary’ 자료형을 많이 이용하기 때문에 나의 첫 NoSQL을 몽고DB로 정했다.?(제조업의 주 데이터인 시계열 데이터를 관리하기에 InfluxDB가 좋다고 하나 이후에 알아보도록 하겠다!)\n설치파일을 다운받을 수 있는 URL이다.[ https://www.mongodb.com/download-center/community?jmp=docs ]\n\n\n\n본인에게 맞는 사양을 선택하세요!\n다른 설치 프로그램들과 같이 쭈욱 설치를 진행하며 설치 경로 변경이 필요하다면 ‘Custom’ 버튼을 통해 경로를 수정해준다.\nCMD 창에서 설치 경로를 찾아 들어가지 않아도 바로 실행할 수 있도록 환경변수를 추가한다.\n시스템 변수 중 ‘Path’를 들어가 다음과 같이 bin 경로를 추가한다.\n\n\n\n환경변수 추가\n이후 몽고DB를 실행시키는 명령인 'mongod'를 입력했을 때 에러가 발생한다.\n\n\n\n\n\n\n기본 db 경로인 'C:\\data\\db\\'폴더가 없기 때문이다.\n해당 경로로 폴더를 생성해준다. 다른 곳에 생성하고 싶다면 '--dbpath' 명령어를 통해 경로를 바꿔주자.\n\n\n\n\n\n이후 'mongod' 명령어를 통해 MongoDB를 실행할 수 있다.\n웹브라우저에 'localhost:27017' 을 입력하여 다음 메세지가 출력된다면 제대로 작동하는것이다.\n\n\n\n\n\n'It looks like you are trying to access MongoDB over HTTP on the native driver port.'","dateCreated":"2019-05-26T03:36:49+09:00","dateModified":"2019-06-14T01:37:56+09:00","datePublished":"2019-05-26T03:36:49+09:00","description":"\n윈도우 환경 ‘MongoDB’ 설치방법을 알아보자!","headline":"MongoDB 설치","image":["thumbnail_mongodb.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://woojungchoi.github.io/2019/05/26/mongodb/"},"publisher":{"@type":"Organization","name":"Woojung Choi","sameAs":["https://github.com/woojungchoi","http://stackoverflow.com/users","https://www.linkedin.com/in/woojung-joe-choi-90064616a/","mailto:'cwj635@gmail.com'"],"image":"Me.jpg","logo":{"@type":"ImageObject","url":"Me.jpg"}},"url":"https://woojungchoi.github.io/2019/05/26/mongodb/","keywords":"NoSQL, DB","thumbnailUrl":"thumbnail_mongodb.png"}</script>
+    <meta name="description" content="윈도우 환경 ‘MongoDB’ 설치방법을 알아보자!">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="MongoDB 설치">
+<meta property="og:url" content="https://woojungchoi.github.io/2019/05/26/mongodb/index.html">
+<meta property="og:site_name" content="WooChoi&#39;s Data Science">
+<meta property="og:description" content="윈도우 환경 ‘MongoDB’ 설치방법을 알아보자!">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://woojungchoi.github.io/2019/05/26/mongodb/install1.PNG">
+<meta property="og:image" content="https://woojungchoi.github.io/2019/05/26/mongodb/install2.PNG">
+<meta property="article:published_time" content="2019-05-25T18:36:49.000Z">
+<meta property="article:modified_time" content="2019-06-13T16:37:56.030Z">
+<meta property="article:author" content="Woojung Choi">
+<meta property="article:tag" content="NoSQL">
+<meta property="article:tag" content="DB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://woojungchoi.github.io/2019/05/26/mongodb/install1.PNG">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://woojungchoi.github.io/assets/images/Me.jpg"/>
+    
+    
+        <meta property="og:image" content="https://woojungchoi.github.io/2019/05/26/mongodb/thumbnail_mongodb.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://woojungchoi.github.io/2019/05/26/mongodb/thumbnail_mongodb.png" />
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/%20">WooChoi&#39;s Data Science</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/Me.jpg" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/Me.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Woojung Choi</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>#DataMining #Statistics #BigData</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/%20"
+                            
+                            title="Home"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/profile/"
+                            
+                            title="Profile"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-user" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Profile</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="Categories"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="Tags"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="Archives"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                            title="Search"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="About"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/woojungchoi" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="http://stackoverflow.com/users" target="_blank" rel="noopener" title="Stack Overflow">
+                    
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.linkedin.com/in/woojung-joe-choi-90064616a/" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="mailto:'cwj635@gmail.com'" target="_blank" rel="noopener" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title">
+            MongoDB 설치
+        </h1>
+    
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!-- excerpt --></p>
+<p>가장 보편적으로 사용하는 NoSQL인 MongoDB의 설치 방법을 알아보자.</p>
+<p>‘OpenTSDB’, ‘InfluxDB’ 또한 NoSQL이지만 ‘MongoDB’를 먼저 선택하게 된 계기가 있다. mongoDB의 데이터는 각 ‘collection’에 ‘document’ 형식으로 저장이 되는데, 이는 파이썬 ‘Dictionary’ 자료형과 같다.</p>
+<p>데이터 분석시 파이썬 ‘Dictionary’ 자료형을 많이 이용하기 때문에 나의 첫 NoSQL을 몽고DB로 정했다.?<br>(제조업의 주 데이터인 시계열 데이터를 관리하기에 InfluxDB가 좋다고 하나 이후에 알아보도록 하겠다!)</p>
+<p>설치파일을 다운받을 수 있는 URL이다.<br>[ <a href="https://www.mongodb.com/download-center/community?jmp=docs" target="_blank" rel="noopener">https://www.mongodb.com/download-center/community?jmp=docs</a> ]</p>
+
+<br>
+
+<div class="figure left" style="width:;"><a class="fancybox" href="install1.PNG" title="본인에게 맞는 사양을 선택하세요!" data-caption="본인에게 맞는 사양을 선택하세요!" data-fancybox="travel"><img class="fig-img" src="install1.PNG" alt="본인에게 맞는 사양을 선택하세요!"></a><span class="caption">본인에게 맞는 사양을 선택하세요!</span></div><div style="clear:both;"></div>
+<p>다른 설치 프로그램들과 같이 쭈욱 설치를 진행하며 설치 경로 변경이 필요하다면 ‘Custom’ 버튼을 통해 경로를 수정해준다.</p>
+<p>CMD 창에서 설치 경로를 찾아 들어가지 않아도 바로 실행할 수 있도록 환경변수를 추가한다.</p>
+<p>시스템 변수 중 ‘Path’를 들어가 다음과 같이 bin 경로를 추가한다.</p>
+
+<br>
+
+<div class="figure left" style="width:;"><a class="fancybox" href="install2.PNG" title="환경변수 추가" data-caption="환경변수 추가" data-fancybox="travel"><img class="fig-img" src="install2.PNG" alt="환경변수 추가"></a><span class="caption">환경변수 추가</span></div><div style="clear:both;"></div>
+<p>이후 몽고DB를 실행시키는 명령인 <span class="highlight-text yellow">'mongod'</span>를 입력했을 때 에러가 발생한다.
+
+
+
+<br>
+
+
+기본 db 경로인 <span class="highlight-text yellow">'C:\data\db\'</span>폴더가 없기 때문이다.</p>
+<p>해당 경로로 폴더를 생성해준다. 다른 곳에 생성하고 싶다면 <span class="highlight-text yellow">'--dbpath'</span> 명령어를 통해 경로를 바꿔주자.
+
+
+<br>
+
+
+이후 <span class="highlight-text yellow">'mongod'</span> 명령어를 통해 MongoDB를 실행할 수 있다.</p>
+<p>웹브라우저에 <span class="highlight-text yellow">'localhost:27017'</span> 을 입력하여 다음 메세지가 출력된다면 제대로 작동하는것이다.
+
+
+<br>
+
+
+<span class="highlight-text blue">'It looks like you are trying to access MongoDB over HTTP on the native driver port.'</span></p>
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/DB/" rel="tag">DB</a> <a class="tag tag--primary tag--small t-link" href="/tags/NoSQL/" rel="tag">NoSQL</a>
+
+            </div>
+        
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2020 Woojung Choi. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/Me.jpg" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Woojung Choi</h4>
+        
+            <div id="about-card-bio"><p>#DataMining #Statistics #BigData</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>전자부품연구원 <br>지능융합SW 연구센터</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
