@@ -13,7 +13,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Woojung Choi","sameAs":["https://github.com/woojungchoi","http://stackoverflow.com/users","https://www.linkedin.com/in/woojung-joe-choi-90064616a/","mailto:'cwj635@gmail.com'"],"image":"Me.jpg"},"articleBody":"\n\n국토교통부 교통안전공단에서는 11개의 위험운전행동 기준입니다\n11대 위험운전행동 기준\n\n[ https://etas.ts2020.kr/etas/frtl0401/pop/goList.do ]\n\n\n\n\n\n\n다른 설치 프로그램들과 같이 쭈욱 설치를 진행하며 설치 경로 변경이 필요하다면 ‘Custom’ 버튼을 통해 경로를 수정해준다.\nCMD 창에서 설치 경로를 찾아 들어가지 않아도 바로 실행할 수 있도록 환경변수를 추가한다.\n시스템 변수 중 ‘Path’를 들어가 다음과 같이 bin 경로를 추가한다.\n\n\n\n\n환경변수 추가\n\n이후 몽고DB를 실행시키는 명령인 'mongod'를 입력했을 때 에러가 발생한다.\n\n\n\n\n\n\n기본 db 경로인 'C:\\data\\db\\'폴더가 없기 때문이다.\n해당 경로로 폴더를 생성해준다. 다른 곳에 생성하고 싶다면 '--dbpath' 명령어를 통해 경로를 바꿔주자.\n\n\n\n\n\n이후 'mongod' 명령어를 통해 MongoDB를 실행할 수 있다.\n웹브라우저에 'localhost:27017' 을 입력하여 다음 메세지가 출력된다면 제대로 작동하는것이다.\n\n\n\n\n\n'It looks like you are trying to access MongoDB over HTTP on the native driver port.'","dateCreated":"2020-07-22T12:17:50+09:00","dateModified":"2020-07-22T12:40:32+09:00","datePublished":"2020-07-22T12:17:50+09:00","description":"\n\n국토교통부 교통안전공단에서 정한 차량의 11대 위험운전행동 기준과 대형차량의 운행기록계인 DTG(Digital TachoGraph)의 설치에 대해 알아봅시다.","headline":"교통안전공단 위험운전행동기준과 DTG","image":["thumbnail_mongodb.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://woojungchoi.github.io/2020/07/22/dangerdriving/"},"publisher":{"@type":"Organization","name":"Woojung Choi","sameAs":["https://github.com/woojungchoi","http://stackoverflow.com/users","https://www.linkedin.com/in/woojung-joe-choi-90064616a/","mailto:'cwj635@gmail.com'"],"image":"Me.jpg","logo":{"@type":"ImageObject","url":"Me.jpg"}},"url":"https://woojungchoi.github.io/2020/07/22/dangerdriving/","keywords":"Mobility, ConnectedCar, DangerDriving","thumbnailUrl":"thumbnail_mongodb.png"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Woojung Choi","sameAs":["https://github.com/woojungchoi","http://stackoverflow.com/users","https://www.linkedin.com/in/woojung-joe-choi-90064616a/","mailto:'cwj635@gmail.com'"],"image":"Me.jpg"},"articleBody":"\n\n국토교통부 교통안전공단에서는 위험운전행동 기준 11개를 제시했습니다. 다음은 각 11개의 기준을 상세하게 나타내는 표입니다.\n11대 위험운전행동 기준\n\n화물차, 버스, 택시 세 업태의 운행 특성에 맞추어 잘 제시한것같습니다.\n무엇보다도 수학적으로 자명하게 기술해놓은것이 마음에 듭니다. 여러분도 알고리즘을 짜고싶어지지 않나요??ㅎㅎㅎ\n따라서 GPS기반의 시계열데이터에서 과속유형과 연속운전을 제외한 급가속, 급감속, 급차로변경, 급회전을 추출하는 알고리즘을 개발했습니다. 조만간 Github에 올려놓을테니 시간이 부족한 분들은 마음껏 가져다쓰시면 됩니다.\n\n다음은 흔히 DTG(Digital TachoGraph)라고 말하는 디지털운행기록장치에 대해서 알아보겠습니다.\n\n\n\n차량운행기록을 실시간으로 저장하는 기기로 차량의 GPS위치, 속도, RPM, 제동유무, 이동거리 등을 1초단위로 기록합니다.\n이렇게 기록된 DTG를 통해 앞서 소개한 위험운전 기준으로 운행을 평가하여 페널티를 부여합니다.\n의무화가 되었음. 자료를 제출해야 함.\n이 데이터를 실시간으로 서버에 올리게 되면 커넥티드카라고 볼 수 있음.\n커넥티드카 서비스를 기획하고 개발해야 하는 저에게 이 위험운전행동기준은 가장 기본적으로 해야 할 일이라고 생각했습니다.\n1) 보험비용절감 가능2) 경영에 필요3) 패턴\n인프라만듦","dateCreated":"2020-07-22T12:17:50+09:00","dateModified":"2020-07-22T13:52:38+09:00","datePublished":"2020-07-22T12:17:50+09:00","description":"\n\n국토교통부 교통안전공단에서 정한 차량의 11대 위험운전행동 기준과 대형차량의 운행기록계인 DTG(Digital TachoGraph)의 설치에 대해 알아봅시다.","headline":"교통안전공단 위험운전행동기준과 DTG","image":["thumbnail_mongodb.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://woojungchoi.github.io/2020/07/22/dangerdriving/"},"publisher":{"@type":"Organization","name":"Woojung Choi","sameAs":["https://github.com/woojungchoi","http://stackoverflow.com/users","https://www.linkedin.com/in/woojung-joe-choi-90064616a/","mailto:'cwj635@gmail.com'"],"image":"Me.jpg","logo":{"@type":"ImageObject","url":"Me.jpg"}},"url":"https://woojungchoi.github.io/2020/07/22/dangerdriving/","keywords":"Mobility, ConnectedCar, DangerDriving","thumbnailUrl":"thumbnail_mongodb.png"}</script>
     <meta name="description" content="국토교통부 교통안전공단에서 정한 차량의 11대 위험운전행동 기준과 대형차량의 운행기록계인 DTG(Digital TachoGraph)의 설치에 대해 알아봅시다.">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="교통안전공단 위험운전행동기준과 DTG">
@@ -22,9 +22,8 @@
 <meta property="og:description" content="국토교통부 교통안전공단에서 정한 차량의 11대 위험운전행동 기준과 대형차량의 운행기록계인 DTG(Digital TachoGraph)의 설치에 대해 알아봅시다.">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://woojungchoi.github.io/2020/07/22/dangerdriving/dangerchart.PNG">
-<meta property="og:image" content="https://woojungchoi.github.io/2020/07/22/dangerdriving/install2.PNG">
 <meta property="article:published_time" content="2020-07-22T03:17:50.000Z">
-<meta property="article:modified_time" content="2020-07-22T03:40:32.608Z">
+<meta property="article:modified_time" content="2020-07-22T04:52:38.682Z">
 <meta property="article:author" content="Woojung Choi">
 <meta property="article:tag" content="Mobility">
 <meta property="article:tag" content="ConnectedCar">
@@ -291,47 +290,24 @@
         <div class="main-content-wrap">
             <!-- excerpt -->
 
-<p>국토교통부 교통안전공단에서는 11개의 위험운전행동 기준입니다</p>
+<p>국토교통부 교통안전공단에서는 위험운전행동 기준 11개를 제시했습니다. 다음은 각 11개의 기준을 상세하게 나타내는 표입니다.<br><br></p>
 <div class="figure left" style="width:;"><a class="fancybox" href="dangerchart.PNG" title="11대 위험운전행동 기준" data-caption="11대 위험운전행동 기준" data-fancybox="travel"><img class="fig-img" src="dangerchart.PNG" alt="11대 위험운전행동 기준"></a><span class="caption">11대 위험운전행동 기준</span></div><div style="clear:both;"></div>
 
-<p>[ <a href="https://etas.ts2020.kr/etas/frtl0401/pop/goList.do" target="_blank" rel="noopener">https://etas.ts2020.kr/etas/frtl0401/pop/goList.do</a> ]</p>
+<p>화물차, 버스, 택시 세 업태의 운행 특성에 맞추어 잘 제시한것같습니다.</p>
+<p>무엇보다도 수학적으로 자명하게 기술해놓은것이 마음에 듭니다. 여러분도 알고리즘을 짜고싶어지지 않나요??ㅎㅎㅎ</p>
+<p>따라서 GPS기반의 시계열데이터에서 과속유형과 연속운전을 제외한 <span class="highlight-text red">급가속, 급감속, 급차로변경, 급회전</span>을 추출하는 알고리즘을 개발했습니다. 조만간 Github에 올려놓을테니 시간이 부족한 분들은 마음껏 가져다쓰시면 됩니다.
 
-<br/>
-
-
-
-
-<p>다른 설치 프로그램들과 같이 쭈욱 설치를 진행하며 설치 경로 변경이 필요하다면 ‘Custom’ 버튼을 통해 경로를 수정해준다.</p>
-<p>CMD 창에서 설치 경로를 찾아 들어가지 않아도 바로 실행할 수 있도록 환경변수를 추가한다.</p>
-<p>시스템 변수 중 ‘Path’를 들어가 다음과 같이 bin 경로를 추가한다.</p>
-
-<br/>
-
-
-<div class="figure left" style="width:;"><a class="fancybox" href="install2.PNG" title="환경변수 추가" data-caption="환경변수 추가" data-fancybox="travel"><img class="fig-img" src="install2.PNG" alt="환경변수 추가"></a><span class="caption">환경변수 추가</span></div><div style="clear:both;"></div>
-
-<p>이후 몽고DB를 실행시키는 명령인 <span class="highlight-text yellow">'mongod'</span>를 입력했을 때 에러가 발생한다.
+다음은 흔히 DTG(Digital TachoGraph)라고 말하는 디지털운행기록장치에 대해서 알아보겠습니다.
 
 
 
-<br/>
-
-
-기본 db 경로인 <span class="highlight-text yellow">'C:\data\db\'</span>폴더가 없기 때문이다.</p>
-<p>해당 경로로 폴더를 생성해준다. 다른 곳에 생성하고 싶다면 <span class="highlight-text yellow">'--dbpath'</span> 명령어를 통해 경로를 바꿔주자.
-
-
-<br/>
-
-
-이후 <span class="highlight-text yellow">'mongod'</span> 명령어를 통해 MongoDB를 실행할 수 있다.</p>
-<p>웹브라우저에 <span class="highlight-text yellow">'localhost:27017'</span> 을 입력하여 다음 메세지가 출력된다면 제대로 작동하는것이다.
-
-
-<br/>
-
-
-<span class="highlight-text blue">'It looks like you are trying to access MongoDB over HTTP on the native driver port.'</span></p>
+차량운행기록을 실시간으로 저장하는 기기로 차량의 GPS위치, 속도, RPM, 제동유무, 이동거리 등을 <span class="highlight-text red">1초단위</span>로 기록합니다.</p>
+<p>이렇게 기록된 DTG를 통해 앞서 소개한 위험운전 기준으로 운행을 평가하여 페널티를 부여합니다.</p>
+<p>의무화가 되었음. 자료를 제출해야 함.</p>
+<p>이 데이터를 실시간으로 서버에 올리게 되면 커넥티드카라고 볼 수 있음.</p>
+<p>커넥티드카 서비스를 기획하고 개발해야 하는 저에게 이 위험운전행동기준은 가장 기본적으로 해야 할 일이라고 생각했습니다.</p>
+<p>1) 보험비용절감 가능<br>2) 경영에 필요<br>3) 패턴</p>
+<p>인프라만듦</p>
             
 
         </div>
